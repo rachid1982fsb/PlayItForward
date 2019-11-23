@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2019_11_23_010543) do
   create_table "events", force: :cascade do |t|
     t.string "name"
     t.string "location"
-    t.datetime "date"
+    t.string "date"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -55,7 +55,7 @@ ActiveRecord::Schema.define(version: 2019_11_23_010543) do
 
   create_table "volunteer_nonprofits", force: :cascade do |t|
     t.integer "hours"
-    t.string "type"
+    t.string "description"
     t.integer "multiplier"
     t.integer "volunteer_id", null: false
     t.integer "nonprofit_id", null: false

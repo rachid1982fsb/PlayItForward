@@ -18,10 +18,6 @@ vol3 = Volunteer.new(username: "L33t Watermelon", name: "Bananza Gonzalez", orga
 vol3.password = "123"
 vol3.save
 
-vol4 = Volunteer.new(username: "L33t Orange", name: "Flippidy Gibbets", organization: "Monsters Inc.", image: '/assets/imgs/person4.jpg', biography: "You need not know my name, for my name is not need know.", status: Volunteer::STATUSES[0], level: 1, points: 0)
-vol4.password = "123"
-vol4.save
-
 np1 = Nonprofit.new(username: "ForProfit", name: "We help bears and people named Earl", address: "7th circle of Heaven", logo: "", description: "We actually don't help people named Earl", mission: "To lie pathologically")
 np1.password = "123"
 np1.save
@@ -30,12 +26,20 @@ np2 = Nonprofit.new(username: "ForOnions", name: "Uhhhhhh", address: "4th Square
 np2.password = "123"
 np2.save
 
-np3 = Nonprofit.new(username: "ForCarrots", name: "Please stop soliciting", address: "32nd Avenue", logo: "", description: "We hate hiking", mission: "To lie pathologically")
-np3.password = "123"
-np3.save
+ev1 = Event.new(name: "Walk for Good", location: "A Mountain", date: "March 2, 2018", description: "Walking?")
+ev1.save
 
-np4 = Nonprofit.new(username: "ForHonor", name: "Potatoes...Jeez", address: "8th Kidney stone street", logo: "", description: "We don't actually know why we're here", mission: "To lie pathologically")
-np4.password = "123"
-np4.save
+ev2 = Event.new(name: "Run for Bad", location: "A track, LIKE A CAR TRACK", date: "June 6th, 2006", description: "FEEL THE BURN!")
+ev2.save
 
-ev1 = Event.new(
+enp1 = EventNonprofit.create(event_id: ev1.id, nonprofit_id: np1.id)
+enp2 = EventNonprofit.create(event_id: ev2.id, nonprofit_id: np2.id)
+
+evv1 = EventVolunteer.create(event_id: ev1.id, volunteer_id: vol1.id, hours: 20, multiplier: 2)
+evv2 = EventVolunteer.create(event_id: ev2.id, volunteer_id: vol2.id, hours: 7, multiplier: 4)
+evv3 = EventVolunteer.create(event_id: ev2.id, volunteer_id: vol1.id, hours: 6, multiplier: 3)
+evv4 = EventVolunteer.create(event_id: ev1.id, volunteer_id: vol3.id, hours: 18, multiplier: 1)
+
+vnp1 = VolunteerNonprofit.create(volunteer_id: vol1.id, nonprofit_id: np1.id, hours: 12, description: "The Nice Kind", multiplier: 2)
+vnp2 = VolunteerNonprofit.create(volunteer_id: vol2.id, nonprofit_id: np2.id, hours: 20, description: "The Evil Kind", multiplier: 3)
+vnp3 = VolunteerNonprofit.create(volunteer_id: vol3.id, nonprofit_id: np2.id, hours: 6, description: "The Smelly Kind", multiplier: 1)

@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+vol1 = Volunteer.new(username: "L33t Mango", name: "Earl Grey", organization: "Salty Fruits Inc.", image: '../

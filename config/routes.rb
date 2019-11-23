@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  # root to: 'statc#ndex'
+  # root to: 'static#ndex'
   resources :event_volunteers
   resources :event_nonprofits
   resources :volunteer_nonprofits

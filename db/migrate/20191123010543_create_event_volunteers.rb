@@ -3,7 +3,8 @@ class CreateEventVolunteers < ActiveRecord::Migration[6.0]
     create_table :event_volunteers do |t|
       t.references :event, null: false, foreign_key: true
       t.references :volunteer, null: false, foreign_key: true
-
+      t.integer :hours
+      t.integer :multiplier
       t.timestamps
     end
   end

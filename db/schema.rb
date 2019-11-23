@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 2019_11_23_010543) do
   create_table "event_volunteers", force: :cascade do |t|
     t.integer "event_id", null: false
     t.integer "volunteer_id", null: false
+    t.integer "hours"
+    t.integer "multiplier"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["event_id"], name: "index_event_volunteers_on_event_id"

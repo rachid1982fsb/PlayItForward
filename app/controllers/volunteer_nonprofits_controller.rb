@@ -1,0 +1,2 @@
+class VolunteerNonprofitsController < ApplicationController
+end

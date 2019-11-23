@@ -1,0 +1,2 @@
+class EventNonprofitsController < ApplicationController
+end
